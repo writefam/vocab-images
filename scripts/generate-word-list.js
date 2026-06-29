@@ -26,7 +26,11 @@ const path = require('path');
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function slugify(str) {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+  return str
+    .toLowerCase()
+    .replace(/[''`]/g, '')           // strip apostrophes/smart-quotes entirely
+    .replace(/[^a-z0-9]+/g, '_')    // remaining non-alphanumeric runs → _
+    .replace(/^_|_$/g, '');         // strip leading/trailing _
 }
 
 function buildWordId(volumeIdx, chapterIdx, lessonIdx, wordId) {
