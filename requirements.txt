@@ -1,0 +1,7 @@
+# Vocabulary image fetcher dependencies
+# Install: pip install -r requirements.txt
+
+requests>=2.31.0       # HTTP downloads + image API calls
+Pillow>=10.0.0         # Image resize, crop, WebP conversion (already installed if you used tamreen)
+python-dotenv>=1.0.0   # Load .env file
+pymongo>=4.6.0         # MongoDB access (only needed for --from-mongo mode)
