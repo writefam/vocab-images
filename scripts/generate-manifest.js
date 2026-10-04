@@ -41,7 +41,8 @@ if (!fs.existsSync(imagesDir)) {
 }
 
 const SUPPORTED_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png']);
-const WORD_ID_PATTERN = /^(v\d+_c\d+_l\d+_w\d+)_.+/;
+// Book/lexicon ids: v1_c1_l1_w1 ; Masaadir ids: m1_b1_w1
+const WORD_ID_PATTERN = /^(v\d+_c\d+_l\d+_w\d+|m\d+_b\d+_w\d+)_.+/;
 
 const files = fs.readdirSync(imagesDir).filter(f => {
   const ext = path.extname(f).toLowerCase();
